@@ -9,10 +9,10 @@ function menu() {
     console.log("--- UCB -o- MIS-707 ---");
     console.log("1. Agregar nueva contraseña");
     console.log("2. Ver contraseñas almacenadas");
-    console.log("3. Eliminar contraseña");
+    console.log("3. Eliminar contrasena");
     console.log("4. Salir");
 
-    const choice = readline.question("Selecciona una opción: ");
+    const choice = readline.question("Selecciona una opcion: ");
 
     switch (choice) {
         case "1":
@@ -38,8 +38,7 @@ function menu() {
 function addPassword() {
     const service = readline.question("Servicio: ");
     const username = readline.question("Usuario: ");
-    const password = readline.question("Contraseña: ", { hideEchoBack: true });
-
+    const password = readline.question("Contrasena: ", { hideEchoBack: true });
     const encrypted = encrypt(password);
 
     db.run(
@@ -86,7 +85,7 @@ function deletePassword() {
 
 // Función para pausar antes de volver al menú
 function pauseReturnMenu() {
-    readline.question("\nPresiona Enter para volver al menú...");
+    readline.question("\nPresiona Enter para volver al menu...");
     menu();
 }
 
